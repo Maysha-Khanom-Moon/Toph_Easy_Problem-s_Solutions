@@ -1,0 +1,27 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int main()
+{
+	int h,m;
+	cin>>h>>m;
+
+	int cal_h=h*30;
+	double cal_m=m*0.5;
+
+	double dh = cal_h+cal_m , dm = m*6; //dh= angle of hour division. dm = angle of minute division.
+
+	if((dh >=180 && dm >= 180) || (dh <180 && dm < 180)){
+        double Max = max(dh,dm);
+        double Min = min(dh,dm);
+        cout<<Max-Min<<endl;
+	}
+	else{
+        double Max = max(dh,dm);
+        double Min = min(dh,dm);
+        cout<<360-Max+Min<<endl;
+	}
+
+	return 0;
+}
