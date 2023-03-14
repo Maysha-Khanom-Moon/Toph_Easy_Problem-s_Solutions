@@ -1,0 +1,73 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    int n;
+    cin>>n;
+    string arr[n];
+
+    for(int i=0; i<n; i++){
+        cin>>arr[i];
+    }
+
+    int length = 0;
+    for(int i=0; i<n; i++){
+        if(length < arr[i].size()){
+            length = arr[i].size();
+        }
+    }
+  ///Highest size of array's element(sound of goat).
+  
+    for(int i=0; i<n; i++){
+        int d=arr[i].size();
+
+        if(length % 2){
+
+            if(d == 2){
+
+                for(int space =0; space <(length-d)/2; space++) cout<<" ";
+
+                cout<<"baa";
+            }
+
+            else if(d%2){
+
+                for(int space =0; space <(length-d)/2; space++) cout<<" ";
+                cout<<arr[i];
+            }
+
+            else{
+
+                for(int space =0; space <((length-d)/2)+1; space++) cout<<" ";
+                for(int k=0; k<d-1; k++) cout<<arr[i][k];
+            }
+
+        }
+
+        else{
+            if(d == 2){
+
+                for(int space =0; space <(length-d-1)/2; space++) cout<<" ";
+
+                cout<<"baa";
+            }
+
+            else if(d%2){
+
+                for(int space =0; space <(length-d)/2; space++) cout<<" ";
+                cout<<arr[i];
+            }
+
+            else{
+
+                for(int space =0; space <((length-d)/2); space++) cout<<" ";
+                for(int k=0; k<d-1; k++) cout<<arr[i][k];
+            }
+
+        }
+        cout<<endl;
+    }
+
+    return 0;
+}
