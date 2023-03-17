@@ -1,0 +1,19 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+	double f;
+	cin>>f;
+    int per = floor(f);
+
+	cout<<'[';
+	for(int i=0; i<(int)f/10; i++){
+        cout<<'+';
+	}
+	for(int i=0; i<(10-(int)f/10); i++){
+        cout<<'.';
+	}
+	cout<<"] "<<per<<'%'<<endl;
+
+	return 0;
+}
