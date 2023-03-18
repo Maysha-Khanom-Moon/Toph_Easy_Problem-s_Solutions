@@ -1,0 +1,37 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+	int t;
+	cin>>t;
+
+	while(t--){
+        string s;
+        cin>>s;
+        int ct=s.size();
+
+        for(int i=0; i< s.size(); i++){
+            char ch = s[i];
+            if(ch == 'N' || ch == 'W' || ch == 'D') ct--;
+        }
+
+        if(ct < 6){
+            if(ct == 1 || ct == 0) cout<<ct<<" BALL";
+            else cout<<ct<<" BALLS";
+        }
+        else if(ct%6 == 0){
+            if(ct/6 == 1) cout<<"1 OVER";
+            else cout<<ct/6<<" OVERS";
+        }
+        else {
+            if(ct/6==1) cout<<ct/6<<" OVER ";
+            else cout<<ct/6<<" OVERS ";
+
+            if(ct%6==1) cout<<"1 BALL";
+            else cout<<ct%6<<" BALLS";
+        }
+        cout<<endl;
+	}
+
+	return 0;
+}
